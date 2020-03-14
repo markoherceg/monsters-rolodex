@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-import { CardList } from './components/card-list/card-list.component.jsx';
-import { SearchBox } from './components/search-box/search-box.component';
+import { CardList } from "./components/card-list/card-list.component.jsx";
+import { SearchBox } from "./components/search-box/search-box.component";
 
 class App extends Component {
   constructor() {
@@ -10,12 +10,12 @@ class App extends Component {
 
     this.state = {
       monsters: [],
-      searchField: ''
+      searchField: ""
     };
   }
 
   componentDidMount() {
-    fetch('http://jsonplaceholder.typicode.com/users')
+    fetch("http://jsonplaceholder.typicode.com/users")
       .then(response => response.json())
       .then(users => {
         console.log(users);
@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBox
-          placeholder="Search monsters"
+          placeholder="Traži čudovište"
           handleChange={this.handleChange}
         />
         <CardList monsters={filteredMonsters} />
